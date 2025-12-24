@@ -1,0 +1,148 @@
+/* Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f2f2;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s, color 0.5s;
+}
+
+.dark {
+  background: #121212;
+  color: #eee;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  animation: slideFadeIn 1s ease;
+}
+
+.dark .container {
+  background: #1e1e1e;
+}
+
+/* Logo Styling */
+.logo {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin: 0 auto 20px;
+  animation: logoFadeIn 1.2s ease;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Headings and Labels */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  animation: bounce 1s ease;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+}
+
+/* Inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  transition: 0.3s;
+}
+
+.dark input[type="text"] {
+  background: #2d2d2d;
+  color: white;
+  border: 1px solid #444;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 8px #007bff;
+  outline: none;
+}
+
+/* Submit Button */
+input[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Theme Button */
+.toggle-theme {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.toggle-theme:hover {
+  transform: rotate(20deg);
+}
+
+/* Animations */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-form {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animated-heading {
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(-20px); }
+  50%  { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}

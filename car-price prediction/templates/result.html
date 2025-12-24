@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f0f0;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .box {
+            background: white;
+            display: inline-block;
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .result {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🚗 Prediction Result</h1>
+        <p class="result">💰 <strong>Predicted Price:</strong> ₹ {{ price }}</p>
+        <p class="result">📈 <strong>Model Accuracy:</strong> {{ accuracy }}</p>
+        <a class="btn" href="/">🔙 Try Another</a>
+    </div>
+</body>
+</html>

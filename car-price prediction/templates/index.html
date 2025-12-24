@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Car Price Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <button class="toggle-theme" id="themeToggle">🌙</button>
+
+  <div class="container">
+    <!-- Car Logo -->
+    <img src="{{ url_for('static', filename='image/autoeval.png') }}" class="logo">
+
+
+
+
+    <!-- Heading -->
+    <h2 class="animated-heading">Car Price Predictor</h2>
+
+    <!-- Prediction Form -->
+    <form action="/predict" method="post" class="fade-in-form">
+      <label for="horsepower">Horsepower:</label>
+      <input type="text" name="horsepower" required>
+
+      <label for="engine_size">Engine Size:</label>
+      <input type="text" name="engine_size" required>
+
+      <label for="curb_weight">Curb Weight:</label>
+      <input type="text" name="curb_weight" required>
+
+      <input type="submit" value="🔍 Predict Price">
+    </form>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggle = document.getElementById('themeToggle');
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', mode);
+      toggle.textContent = mode === 'dark' ? '☀️' : '🌙';
+    });
+
+    window.onload = () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.body.classList.add('dark');
+        toggle.textContent = '☀️';
+      }
+    };
+  </script>
+</body>
+</html>
